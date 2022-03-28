@@ -65,3 +65,5 @@ gem 'activeadmin'
 gem "rolify"
 
 gem 'devise'
+
+gem 'bootstrap'
