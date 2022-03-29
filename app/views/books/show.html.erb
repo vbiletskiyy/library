@@ -1,0 +1,53 @@
+<div class="wrapper row0">
+  <div id="topbar" class="hoc clear"> 
+    <div class="fl_left">
+      <ul class="nospace inline pushright">
+        <li><i class="fa fa-phone"></i> +00 (123) 456 7890</li>
+        <li><i class="fa fa-envelope-o"></i> info@domain.com</li>
+      </ul>
+    </div>
+    <div class="fl_right">
+      <%= link_to "Log as admin", user_session_path, class: "btn btn-primary"	 %>
+      <%= link_to "Back", books_path, class: "btn "	 %>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper bgded overlay" style="background-image:url('assets/background.jpeg');">
+  <div id="pageintro" class="hoc clear"> 
+    <article class="introtxt">
+      <h2 class="heading">My library</h2>
+      <p>The best books here...</p>
+    </article>
+  </div>
+</div>
+
+<div class="wrapper row4">
+  <div class="hoc container clear"> 
+      <div class="row ">
+          <div class="col-sm-6">
+            <article>
+              <figure><%= image_tag(@books.image) %>
+              </figure>
+              <div class="txtwrap">
+                <h6 class="heading">Title: <%= @books.title %></h6>
+                <% @books.authors.each do |author| %>
+                <h5>Author: <%= author.name %></h5>
+                <% end %>    
+                <% @books.categories.each do |category| %>
+                <h5>Category: <%= category.name %></h5>
+                <% end %>  
+              </div>
+            </article>
+          </div>
+      </div>
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_right"><a target="_blank" href="#">LIBRARY</a></p>
+  </div>
+</div>

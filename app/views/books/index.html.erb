@@ -1,0 +1,67 @@
+<div class="wrapper row0">
+  <div id="topbar" class="hoc clear"> 
+    <div class="fl_left">
+      <ul class="nospace inline pushright">
+        <li><i class="fa fa-phone"></i> +00 (123) 456 7890</li>
+        <li><i class="fa fa-envelope-o"></i> info@domain.com</li>
+      </ul>
+    </div>
+    <div class="fl_right">
+      <%= link_to "Log as admin", user_session_path, class: "btn btn-primary"	 %>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper row2">
+  <nav id="mainav" class="hoc clear"> 
+    <ul class="clear">
+      <li class="active">
+        <%= link_to "All", books_path %>
+      </li>
+      <%@categories.each do |category|%>
+        <li>
+          <%= link_to category.name, books_path(category_id: category.id) %>
+        </li>
+      <%end%>
+    </ul>
+  </nav>
+</div>
+
+<div class="wrapper bgded overlay" style="background-image:url('assets/background.jpeg');">
+  <div id="pageintro" class="hoc clear"> 
+    <article class="introtxt">
+      <h2 class="heading">My library</h2>
+      <p>The best books here...</p>
+    </article>
+  </div>
+</div>
+
+<div class="wrapper row4">
+  <div class="hoc container clear"> 
+    <% @books.in_groups_of(3, false) do |group| %>
+      <div class="row elements">
+        <% group.each do |book| %>
+          <div class="col-sm-4">
+            <article>
+              <figure><%= image_tag(book.image) %>
+                <figcaption><%= link_to "View details", book %></figcaption>
+              </figure>
+              <div class="txtwrap">
+                <h6 class="heading"><%= book.title %></h6>
+                <p><%= @books.name %></p>
+              </div>
+            </article>
+          </div>
+        <%end%>
+      </div>
+    <%end%>
+    <div class="clear"></div>
+  </div>
+</div>
+
+<div class="wrapper row5">
+  <div id="copyright" class="hoc clear"> 
+    <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_right"><a target="_blank" href="#">LIBRARY</a></p>
+  </div>
+</div>
