@@ -67,3 +67,6 @@ gem "rolify"
 gem 'devise'
 
 gem 'bootstrap'
+
+gem "aws-sdk-s3", require: false
+
